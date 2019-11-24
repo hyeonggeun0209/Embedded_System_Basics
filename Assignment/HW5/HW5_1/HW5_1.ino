@@ -36,7 +36,7 @@ void loop() {
 
   if(count !=0){
 
-    count =0;
+    count = 0;
 
     digitalWrite(led1,1);
 

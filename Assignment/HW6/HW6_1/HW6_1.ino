@@ -21,28 +21,28 @@ void setup() {
 
 void loop() {
   if (digitalRead(pinButton[0])==HIGH) {
-    tone(pinBuzzer, 262); 
+    tone(pinBuzzer, 262); // C
     
     } else if (digitalRead(pinButton[1])==HIGH) {
-    tone(pinBuzzer, 294); 
+    tone(pinBuzzer, 294); // D
     
     } else if (digitalRead(pinButton[2])==HIGH) {
-    tone(pinBuzzer, 330);
+    tone(pinBuzzer, 330); // E
     
     } else if (digitalRead(pinButton[3])==HIGH) {
-    tone(pinBuzzer, 349);
+    tone(pinBuzzer, 349); // F
     
     } else if (digitalRead(pinButton[4])==HIGH) {
-    tone(pinBuzzer, 392); 
+    tone(pinBuzzer, 392); // G
     
     } else if (digitalRead(pinButton[5])==HIGH) {
-    tone(pinBuzzer, 440); 
+    tone(pinBuzzer, 440); // A
     
     } else if (digitalRead(pinButton[6])==HIGH) {
-    tone(pinBuzzer, 494);
+    tone(pinBuzzer, 494); // B
     
     } else if (digitalRead(pinButton[7])==HIGH) {
-    tone(pinBuzzer, 523);
+    tone(pinBuzzer, 523); // C
     
     } else
     noTone(pinBuzzer); // digitalWrite(pinBuzzer, LOW);

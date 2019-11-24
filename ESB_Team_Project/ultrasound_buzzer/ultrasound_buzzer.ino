@@ -4,6 +4,8 @@ const int pinTrig = 2;
 
 const int pinEcho = 4;
 
+const int pinLED = 8; 
+
 int rangeMax = 200;
 
 int rangeMin = 0;
@@ -20,15 +22,11 @@ void setup() {
 
   pinMode(pinEcho, INPUT);
 
-  pinMode(led1,OUTPUT);
+  pinMode(pinLED, OUTPUT);
 
-  pinMode(led2,OUTPUT);
-
-  pinMode(led3,OUTPUT);
+  pinMode(pinBuzzer, OUTPUT); //C D E F G A B C
 
 }
-
- 
 
 void loop() {
 
@@ -40,46 +38,24 @@ void loop() {
 
   digitalWrite(pinTrig, LOW);
 
- 
-
   T = pulseIn(pinEcho, HIGH);
 
   L = T/58.82;
 
   if(L>0&&L<10){
+    
+    tone(pinBuzzer, 523); // C
 
-    digitalWrite(led1,1);
-
-    digitalWrite(led2,0);
-
-    digitalWrite(led3,0);
-
-  }else if(L>=10&&L<15){
-
-    digitalWrite(led1,0);
-
-    digitalWrite(led2,1);
-
-    digitalWrite(led3,0);
-
-  }else if(L>=15&&L<30){
-
-    digitalWrite(led1,0);
-
-    digitalWrite(led2,0);
-
-    digitalWrite(led3,1);
-
+    digitalWrite(pinLED, HIGH);
+    
   }else{
+    
+    noTone(pinBuzzer); // digitalWrite(pinBuzzer, LOW);
 
-    digitalWrite(led1,0);
-
-    digitalWrite(led2,0);
-
-    digitalWrite(led3,0);
-
+    digitalWrite(pinLED, LOW);
+    
   }
-
+  
     delay(100);
-
+    
 }
